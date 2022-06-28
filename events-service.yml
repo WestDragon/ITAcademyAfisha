@@ -83,12 +83,17 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '500':
           $ref: '#/components/responses/Internal_Server_Error'
-  /api/v1/afisha/event/{uuid}:
+  /api/v1/afisha/event/{type}/{uuid}:
     get:
       tags:
         - "События"
       summary: "Получить информацию по событию"
       parameters:
+        - in: path
+          name: type
+          schema:
+            $ref: '#/components/schemas/EventType'
+          required: true
         - in: path
           name: uuid
           description: "Идентификатор события"
