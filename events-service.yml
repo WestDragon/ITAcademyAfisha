@@ -189,7 +189,7 @@ components:
     Internal_Server_Error:
       description: Внутренняя ошибка сервера. Сервер не смог корректно обработать запрос
       content:
-        applicaion/json:
+        application/json:
           schema:
             type: array
             items:
