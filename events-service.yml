@@ -163,7 +163,9 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Event'
+            oneOf:
+              - $ref: '#/components/schemas/EventFilm'
+              - $ref: '#/components/schemas/EventConcert'
 
   responses:
     Bad_Request:
@@ -245,6 +247,39 @@ components:
           $ref: '#/components/schemas/EventType'
         status:
           $ref: '#/components/schemas/EventStatus'
+    EventFilm:
+      type: object
+      description: Фильм
+      allOf:
+        - $ref: '#/components/schemas/Event'
+      properties:
+        country:
+          type: string
+          format: uuid
+          description: "Страна (ссылка на справочник)"
+        release_year:
+          type: integer
+          description: "Год"
+          example: 2022
+        release_date:
+          type: string
+          format: date
+          description: "Дата премьеры"
+          example: "30 июня 2022"
+        duration:
+          type: integer
+          description: "Длительность (минуты)"
+          example: 100
+    EventConcert:
+      type: object
+      description: Концерт
+      allOf:
+        - $ref: '#/components/schemas/Event'
+      properties:
+        category:
+          type: string
+          format: uuid
+          description: "Категория  (ссылка на справочник)"
 
     PageOfEvent:
       type: object
