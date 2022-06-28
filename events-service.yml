@@ -240,10 +240,6 @@ components:
           $ref: '#/components/schemas/EventType'
         status:
           $ref: '#/components/schemas/EventStatus'
-        currency:
-          type: string
-          format: uuid
-          description: Валюта счёта
 
     PageOfEvent:
       type: object
