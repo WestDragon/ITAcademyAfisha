@@ -327,7 +327,7 @@ components:
         - first
         - number_of_elements
         - last
-      description: Страница с опросами
+      description: Страница
       properties:
         number:
           type: integer
