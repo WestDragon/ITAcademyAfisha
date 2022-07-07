@@ -49,12 +49,16 @@ paths:
           name: page
           schema:
             type: integer
+            minimum: 0
+            default: 0
           description: Номер страницы
           required: false
         - in: query
           name: size
           schema:
             type: integer
+            minimum: 1
+            default: 20
           description: Размер страницы
           required: false
       responses:
@@ -99,12 +103,16 @@ paths:
           name: page
           schema:
             type: integer
+            minimum: 0
+            default: 0
           description: Номер страницы
           required: false
         - in: query
           name: size
           schema:
             type: integer
+            minimum: 1
+            default: 20
           description: Размер страницы
           required: false
       responses:
