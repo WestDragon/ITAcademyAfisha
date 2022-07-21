@@ -27,6 +27,8 @@ paths:
       tags:
         - "Справочники"
       summary: Добавление новой страны
+      security:
+        - bearerAuth: [ROLE_ADMIN]
       requestBody:
         $ref: "#/components/requestBodies/CreateCountry"
       responses:
@@ -81,6 +83,8 @@ paths:
       tags:
         - "Справочники"
       summary: Добавление новой категории концерта
+      security:
+        - bearerAuth: [ROLE_ADMIN]
       requestBody:
         $ref: "#/components/requestBodies/CreateConcertCategory"
       responses:
@@ -147,6 +151,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ConcertCategory'
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 
   responses:
     Bad_Request:

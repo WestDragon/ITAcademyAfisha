@@ -27,6 +27,8 @@ paths:
       tags:
         - "События"
       summary: "Добавление нового события"
+      security:
+        - bearerAuth: []
       parameters:
         - in: path
           name: type
@@ -92,6 +94,8 @@ paths:
       tags:
         - "События"
       summary: "Получить информацию по событию"
+      security:
+        - bearerAuth: []
       parameters:
         - in: path
           name: type
@@ -125,6 +129,8 @@ paths:
       tags:
         - "События"
       summary: Редактировать информацию о событии
+      security:
+        - bearerAuth: []
       parameters:
         - in: path
           name: type
@@ -170,6 +176,12 @@ components:
             oneOf:
               - $ref: '#/components/schemas/EventFilm'
               - $ref: '#/components/schemas/EventConcert'
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 
   responses:
     Bad_Request:
