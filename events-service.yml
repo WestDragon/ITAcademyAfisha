@@ -94,8 +94,6 @@ paths:
       tags:
         - "События"
       summary: "Получить информацию по событию"
-      security:
-        - bearerAuth: []
       parameters:
         - in: path
           name: type
